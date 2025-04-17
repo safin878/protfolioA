@@ -8,3 +8,11 @@
 [build.environment]
   NEXT_USE_NETLIFY_EDGE = "true"
   NEXT_PUBLIC_API_URL = "your-api-url"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  included_files = ["node_modules/@netlify/plugin-nextjs/**/*"]
