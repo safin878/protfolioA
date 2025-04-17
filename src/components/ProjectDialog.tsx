@@ -59,11 +59,12 @@ const ProjectDialog = ({
                 </span>
               ))}
             </div>
-            <p className="text-white/50">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium, tempora. Officiis eveniet harum nemo sed sint
-              distinctio fugiat earum cumque aliquid in magnam nam odio
-              molestias architecto veniam, asperiores voluptates?
+            <p className="text-white/50 ">
+              This Project is a dynamic web application built using React.js and
+              Next.js, optimized for fast rendering and SEO. It integrates APIs
+              to provide real-time data, enhancing user interaction. The
+              responsive UI adapts seamlessly across devices, ensuring a smooth
+              user experience.
             </p>
           </div>
         </div>

@@ -211,10 +211,10 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
           <p>
             developed by @
             <Link
-              href={"https://twitter.com/tehseen_type"}
+              href={"https://www.linkedin.com/in/safin24"}
               className="hover:underline"
             >
-              tehseen
+              Safin
             </Link>
           </p>
         </Transition>

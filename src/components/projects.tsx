@@ -140,7 +140,7 @@ const Card = ({ title, image }: Project) => {
             animate={{ y: hover ? -10 : 0, opacity: hover ? 1 : 0 }}
             className="absolute text-white/50"
           >
-            Lorem ipsum dolor sit amet.
+            Let's see what I've been up to.
           </motion.p>
         </div>
       </div>

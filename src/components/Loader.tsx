@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { OpacityTransition, Transition } from "./ui/Transitions";
+import { Portfolio } from "./../utils/interface";
 
 interface PageLoadProps {
   setHideLoader: (value: boolean) => void;
@@ -35,13 +36,13 @@ const Loader = ({ setHideLoader }: PageLoadProps) => {
     >
       <div className="p-4 md:p-10 flex flex-col md:justify-between max-md:gap-8 w-full h-full">
         <Transition transition={{ delay: 0.2 }}>
-          <span className="font-semibold text-white/40">ThePortfolio</span>
+          <span className="font-semibold text-white/40">Safin's Portfolio</span>
         </Transition>
         <div className="flex flex-col max-md:justify-between max-md:h-full">
           <Transition transition={{ delay: 0.4 }}>
             <div className="text-3xl md:text-5xl w-full md:w-2/5 whitespace-pre-wrap">
               <OpacityTransition>
-                I develop 3D visuals, user interfaces and web applications
+                Jump into the Safin's Portfolio World,
               </OpacityTransition>
             </div>
           </Transition>
