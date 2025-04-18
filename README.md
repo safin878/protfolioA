@@ -132,9 +132,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or feedback, reach out through:
 
-- Email: tehseen.type@gmail.com
-- Twitter: [@tehseen_type](https://twitter.com/tehseen_type)
-- LinkedIn: [Mohd Tehseen](https://linkedin.com/in/tehseen.01)
+- Email: shafin1680@gmail.com
+- Twitter: [@safin_type](https://twitter.com)
+- LinkedIn: [Mohd Safin](https://linkedin.com/in)
 
 ---
 
