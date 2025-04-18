@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import { motion } from "motion/react";
 
@@ -30,7 +31,7 @@ const ProjectDialog = ({
           >
             <XMark />
           </button>
-          <img
+          <Image
             src={selectedProject.image.url}
             width={300}
             height={300}

@@ -36,13 +36,15 @@ const Loader = ({ setHideLoader }: PageLoadProps) => {
     >
       <div className="p-4 md:p-10 flex flex-col md:justify-between max-md:gap-8 w-full h-full">
         <Transition transition={{ delay: 0.2 }}>
-          <span className="font-semibold text-white/40">Safin's Portfolio</span>
+          <span className="font-semibold text-white/40">
+            Safin&apos;s Portfolio
+          </span>
         </Transition>
         <div className="flex flex-col max-md:justify-between max-md:h-full">
           <Transition transition={{ delay: 0.4 }}>
             <div className="text-3xl md:text-5xl w-full md:w-2/5 whitespace-pre-wrap">
               <OpacityTransition>
-                Jump into the Safin's Portfolio World,
+                Jump into the Safin&apos;s Portfolio World,
               </OpacityTransition>
             </div>
           </Transition>

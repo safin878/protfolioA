@@ -39,7 +39,9 @@ const Header = ({ social }: HeaderProps) => {
     <motion.header className="fixed top-0 md:mt-12 md:mr-12 right-0 z-20">
       <Transition className="fixed md:top-8 top-6 md:left-8 left-6 z-30 ">
         <Link href={"/"}>
-          <TextReveal className="font-semibold ">Safin's Portfolio</TextReveal>
+          <TextReveal className="font-semibold ">
+            Safin&apos;s Portfolio
+          </TextReveal>
         </Link>
       </Transition>
       <motion.div
