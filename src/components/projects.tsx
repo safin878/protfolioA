@@ -1,7 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 
 import { SectionHeading, TextReveal } from "./ui/Typography";
 import { Project } from "../utils/interface";
@@ -23,8 +24,8 @@ function Projects({ projects }: ProjectsProps) {
 
   const numProjectToShow = 6;
 
-  useEffect(() => {
-    const applyFilters = (data: Project[], filterValues: string) => {
+  const applyFilters = useCallback(
+    (data: Project[], filterValues: string) => {
       if (!filterValue || filterValues === "all") {
         return data;
       }
@@ -32,11 +33,14 @@ function Projects({ projects }: ProjectsProps) {
       return data.filter((project) =>
         project.techStack.some((tech) => filterValues === tech.trim())
       );
-    };
+    },
+    [filterValue]
+  );
 
+  useEffect(() => {
     const filtered = applyFilters(projects, filterValue);
     setFilteredProjects(filtered);
-  }, [filterValue, projects]);
+  }, [filterValue, projects, applyFilters]);
 
   return (
     <section className="md:p-8 p-4 mt-10 relative" id="projects">
@@ -144,7 +148,7 @@ const Card = ({ title, image }: Project) => {
           </motion.p>
         </div>
       </div>
-      <img
+      <Image
         src={image.url}
         width={500}
         height={500}

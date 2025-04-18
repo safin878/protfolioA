@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState, useCallback } from "react";
 
 import { cn } from "../../utils/cn";
 
@@ -24,10 +24,7 @@ export const InfiniteScroll = ({
   const scrollerRef = useRef<HTMLUListElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    addAnimation();
-  }, []);
-  function addAnimation() {
+  const addAnimation = useCallback(() => {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
 
@@ -42,7 +39,11 @@ export const InfiniteScroll = ({
       getSpeed();
       setStart(true);
     }
-  }
+  }, [direction, speed]);
+
+  useEffect(() => {
+    addAnimation();
+  }, [addAnimation]);
 
   const getDirection = () => {
     if (containerRef.current) {
@@ -59,6 +60,7 @@ export const InfiniteScroll = ({
       }
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -73,17 +75,19 @@ export const InfiniteScroll = ({
 
   return (
     <div
-      className="overflow-hidden w-full scroller [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]"
       ref={containerRef}
+      className={cn(
+        "scroller relative z-0 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        className
+      )}
     >
       <ul
-        className={cn(
-          "flex items-center justify-center gap-4 flex-nowrap  shrink-0 w-max",
-          start && "animate-scroll ",
-          pauseOnHover && "hover:[animation-play-state:paused]",
-          className
-        )}
         ref={scrollerRef}
+        className={cn(
+          "flex min-w-full shrink-0 gap-4 py-4",
+          start && "animate-scroll",
+          pauseOnHover && "hover:[animation-play-state:paused]"
+        )}
       >
         {children}
       </ul>
