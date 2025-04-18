@@ -137,5 +137,3 @@ For questions or feedback, reach out through:
 - LinkedIn: [Mohd Safin](https://linkedin.com/in)
 
 ---
-
-Built with ❤️ by [Mohd Tehseen]
