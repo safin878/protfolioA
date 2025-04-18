@@ -24,19 +24,19 @@ function Projects({ projects }: ProjectsProps) {
   const numProjectToShow = 6;
 
   useEffect(() => {
+    const applyFilters = (data: Project[], filterValues: string) => {
+      if (!filterValue || filterValues === "all") {
+        return data;
+      }
+
+      return data.filter((project) =>
+        project.techStack.some((tech) => filterValues === tech.trim())
+      );
+    };
+
     const filtered = applyFilters(projects, filterValue);
     setFilteredProjects(filtered);
   }, [filterValue, projects]);
-
-  const applyFilters = (data: Project[], filterValues: string) => {
-    if (!filterValue || filterValues === "all") {
-      return data;
-    }
-
-    return data.filter((project) =>
-      project.techStack.some((tech) => filterValues === tech.trim())
-    );
-  };
 
   return (
     <section className="md:p-8 p-4 mt-10 relative" id="projects">
@@ -140,7 +140,7 @@ const Card = ({ title, image }: Project) => {
             animate={{ y: hover ? -10 : 0, opacity: hover ? 1 : 0 }}
             className="absolute text-white/50"
           >
-            Let's see what I've been up to.
+            Let&apos;s see what I&apos;ve been up to.
           </motion.p>
         </div>
       </div>

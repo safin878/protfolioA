@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { About } from "../utils/interface";
 import { SlideIn, Transition } from "./ui/Transitions";
@@ -22,9 +23,11 @@ const Hero = ({ about }: HeroProps) => {
         <div className="relative h-full w-full">
           <div className="flex items-center justify-center flex-col h-full pb-10">
             <Transition>
-              <img
+              <Image
                 src={about.avatar.url}
                 alt={about.name}
+                width={112}
+                height={112}
                 className="rounded-full size-28 object-cover"
               />
             </Transition>
